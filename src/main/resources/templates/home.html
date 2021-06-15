@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorator="layout">
+<meta charset="UTF-8">
+<title>ホーム画面</title>
+</head>
+<body>
+	<h1>ホーム画面</h1>
+	<table th:if="${payment.size()}" border="1">
+		<tr>
+			<th>ID</th>
+			<th>品目名</th>
+			<th>カテゴリー</th>
+			<th>金額</th>
+			<th>メモ</th>
+			<th>日付</th>
+		</tr>
+		<tr th:each="payment:${payment}" th:object="${payment}">
+			<td th:text="*{id}"></td>
+			<td th:text="*{name}"></td>
+			<td th:text="*{category}"></td>
+			<td th:text="*{price}"></td>
+			<td th:text="*{memo}"></td>
+			<td th:text="*{create_day}"></td>
+		</tr>
+	</table>
+
+    
+</body>
+</html>
