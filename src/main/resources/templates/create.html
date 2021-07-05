@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8">
+<title>新規作成画面</title>
+</head>
+<body>
+	<h1>新規作成</h1>
+	
+	<form method="post" th:action="@{/create}" th:object="${payment}">
+		<ul>
+			<li>
+				<label>品目名</label>
+				<input type="text" th:field="*{name}">
+			</li>
+			<li>
+				<label>カテゴリー</label>
+				<input type="text" th:field="*{category}">
+			</li>
+			<li>
+				<label>金額</label>
+				<input type="text" th:field="*{price}">
+			</li>
+			<li>
+				<label>メモ</label>
+				<input type="text" th:field="*{memo}">
+			</li>
+			<li>
+				<label>日付</label>
+				<input type="text" th:field="*{create_day}">
+			</li>
+		</ul>
+		<button>新規登録</button>
+	</form>
+</body>
+</html>

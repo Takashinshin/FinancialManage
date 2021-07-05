@@ -21,5 +21,17 @@ public class PaymentService {
 	public List<Payment> select(){
 		return mapper.select();
 	}
-
+	
+	//一件取得処理
+	@Transactional
+	public Payment selectOne(int id) {
+		return mapper.selectOne(id);
+	}
+	
+	//追加処理
+	@Transactional
+	public void insert(Payment payment) {
+		mapper.insert(payment);
+	}
+	
 }
